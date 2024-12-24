@@ -1,0 +1,127 @@
+<mvc:View controllerName="zgstrecon.zgstrecon.controller.gstrecon"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}" enableScrolling="false" class="myBackgroundStyle">
+        <content>
+        <Panel
+				backgroundDesign="Transparent"
+				id="Panel1"
+				 class="myBackgroundStyle"
+			>
+            <content>
+					<f:SimpleForm  editable="true" emptySpanL="8" emptySpanXL="7" emptySpanM="7" layout="ResponsiveGridLayout" class="FontColorChange" backgroundDesign="Transparent">
+						<f:content>
+							<Label text="Company Code" required="true" design="Bold"/>
+                            <ComboBox id="idCode">
+								<items>
+									<core:ListItem
+										text="1000"
+										key="1000"
+									/>
+									<core:ListItem
+										text="2000"
+										key="2000"
+									/>
+									
+								</items>
+							</ComboBox>
+                            
+                        <Label text="From Date" design="Bold"/>
+						<DatePicker value="yyyy-MM-dd" editable="true" width="200px" id="From"  />
+                        <Label text="To Date" design="Bold"/>
+
+						<DatePicker value="yyyy-MM-dd" editable="true" width="200px" id="To"  />
+						
+						
+						
+						
+						
+							<!-- <DateRangeSelection id="DRS1" class="DRS1"
+							value="{
+				                     'type': 'sap.ui.model.type.DateInterval',
+				                      'formatOptions': {
+				                    	'pattern': 'dd/MM/yyyy'},
+			                        	'parts': [
+					                 {
+					                 	'type': 'sap.ui.model.type.Date',
+				                  		'path': '/start'
+				                      },
+					                  {
+					                	'type': 'sap.ui.model.type.Date',
+					                 	'path': '/end'
+										}
+										]
+									  }" change="handleChange" />  -->
+							 <Label text="GST No" design="Bold"/>
+							 <ComboBox id="Orderfr" showSecondaryValues="true">
+								<items>
+									<core:ListItem
+										text="08AAHCS2781A1ZH"
+										key="08AAHCS2781A1ZH" additionalText="-1000"
+									/>
+									<core:ListItem
+										text="23AAHCS2781A1ZP"
+										key="23AAHCS2781A1ZP" additionalText="-1000"
+									/>
+									<core:ListItem
+										text="08AABCM5293P1ZT"
+										key="08AABCM5293P1ZT" additionalText="-2000"
+									/>
+									<core:ListItem
+										text="23AABCM5293P1Z1"
+										key="23AABCM5293P1Z1" additionalText="-2000"
+									/>
+									
+								</items>
+							</ComboBox>
+							 <!-- <Input  id="Orderfr" maxLength="20" width="100%"
+								placeholder="Enter GST No. "
+								showSuggestion="true"
+								value="{dataModel>/value}"
+								showValueHelp="true"
+								valueHelpRequest="handlef4" ></Input> -->
+					</f:content>
+					</f:SimpleForm>
+					<f:SimpleForm
+						title="Select Action"
+						class="FontColorChange"
+						editable="true"
+						layout="ResponsiveGridLayout"
+						backgroundDesign="Transparent"
+					>
+						<f:content>
+							<VBox>
+								<items>
+									<RadioButtonGroup
+										select="onChangeAction"
+										id="idActionRadioBtnGroup"
+									>
+										<buttons>
+											<RadioButton text="Sales" />
+											<RadioButton text="Purchase" />
+										</buttons>
+									</RadioButtonGroup>
+								</items>
+							</VBox>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button
+						icon="sap-icon://open-command-field"
+						press="Next"
+						type="Emphasized"
+						text="Next"
+					/>
+				</contentRight>
+			</Bar>
+		</footer>
+        
+    </Page>
+</mvc:View>
